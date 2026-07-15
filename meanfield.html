@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mean field theory — Dmitry Vaintrob</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #221c14;
+    --ink-soft: #4a4136;
+    --rule: rgba(60, 48, 30, 0.35);
+    --kandinsky-blue: #27486e;
+    --vermilion: #b3401f;
+    --paper-veil: rgba(248, 242, 226, 0.6);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background-color: #ece2c8;
+    background-image: linear-gradient(rgba(236, 226, 200, 0.3), rgba(236, 226, 200, 0.3)), url("parchment-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: "STIX Two Text", Georgia, serif;
+    font-size: 18px; line-height: 1.55;
+  }
+  a { color: var(--kandinsky-blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--vermilion); }
+  a:focus-visible { outline: 2px solid var(--vermilion); outline-offset: 2px; }
+  .page { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+  nav {
+    display: flex; align-items: baseline; gap: 22px;
+    padding: 18px 0 10px; border-bottom: 1.5px solid var(--ink);
+    font-family: "IBM Plex Mono", monospace; font-size: 13.5px;
+  }
+  nav .brand { margin-right: auto; font-weight: 500; color: var(--ink); text-decoration: none; }
+  nav a { color: var(--ink-soft); text-decoration: none; }
+  nav a:hover { color: var(--vermilion); }
+
+  h1 { font-size: 38px; font-weight: 600; margin: 44px 0 8px; letter-spacing: -0.01em; }
+  .byline { font-family: "IBM Plex Mono", monospace; font-size: 13.5px; color: var(--ink-soft); margin: 0 0 22px; }
+
+  h2 {
+    font-size: 15px;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 6px; margin: 48px 0 20px;
+  }
+
+  .toc { list-style: none; margin: 0; padding: 0; counter-reset: part; }
+  .toc li {
+    counter-increment: part;
+    border: 1.5px solid var(--ink);
+    background: var(--paper-veil);
+    padding: 16px 20px 16px 62px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .toc li::before {
+    content: counter(part);
+    position: absolute; left: 16px; top: 16px;
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 2px solid var(--ink);
+    display: grid; place-items: center;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px; font-weight: 500;
+  }
+  .toc li.live::before { background: var(--kandinsky-blue); border-color: var(--kandinsky-blue); color: #f4eeda; }
+  .toc .title { font-weight: 600; font-size: 19px; }
+  .toc .meta { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--ink-soft); display: block; margin: 2px 0 0; }
+  .toc li.soon { opacity: 0.7; }
+  .toc li.soon .title { color: var(--ink-soft); }
+
+  .resources { list-style: none; margin: 0; padding: 0; }
+  .resources li { margin-bottom: 14px; }
+  .resources .title { font-weight: 600; }
+  .resources .meta { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--ink-soft); display: block; margin: 2px 0 0; }
+
+  footer {
+    margin-top: 64px; padding-top: 14px;
+    border-top: 1.5px solid var(--ink);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px; color: var(--ink-soft);
+  }
+  @media (max-width: 620px) {
+    h1 { font-size: 30px; }
+    nav { flex-wrap: wrap; gap: 12px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav>
+    <a class="brand" href="index.html">d. vaintrob</a>
+    <a href="index.html#research">research</a>
+    <a href="meanfield.html">mean field theory</a>
+    <a href="index.html#writing">writing</a>
+    <a href="index.html#math">mathematics</a>
+    <a href="about.html">about</a>
+  </nav>
+
+  <h1>Mean field theory</h1>
+  <p class="byline">with Lauren Greenspan · in progress</p>
+
+  <p>
+    An introduction to mean field theory for neural networks: the mean-field (critical feature-learning) scaling, how it differs from the lazy/NTK regime, and what it predicts about learning and generalization. The series is published on LessWrong; this page collects the posts and related resources hosted here.
+  </p>
+
+  <h2>The series</h2>
+  <ol class="toc">
+    <li class="live">
+      <span class="title"><a href="https://www.lesswrong.com/posts/rduzFkTKx5pGKWKcL/mean-field-sequence-an-introduction">An introduction</a></span>
+      <span class="meta">LessWrong · April 2026</span>
+    </li>
+    <li class="soon">
+      <span class="title">Part 2 — in preparation</span>
+    </li>
+  </ol>
+
+  <h2>Resources</h2>
+  <ul class="resources">
+    <li>
+      <span class="title">Interactive widget — coming soon</span>
+      <span class="meta">placeholder for on-site interactive tools related to the series</span>
+    </li>
+    <li>
+      <span class="title"><a href="https://arxiv.org/abs/2607.05735">Width-robust learnability in mean-field Bayesian neural networks</a></span>
+      <span class="meta">with Kaarel Hänni · arXiv:2607.05735</span>
+    </li>
+  </ul>
+
+  <footer>
+    <a href="mailto:dmitry@princint.ai">dmitry@princint.ai</a>
+  </footer>
+
+</div>
+</body>
+</html>

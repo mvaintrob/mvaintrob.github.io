@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Dmitry Vaintrob</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #221c14;
+    --ink-soft: #4a4136;
+    --rule: rgba(60, 48, 30, 0.35);
+    --kandinsky-blue: #27486e;
+    --vermilion: #b3401f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background-color: #ece2c8;
+    background-image: linear-gradient(rgba(236, 226, 200, 0.3), rgba(236, 226, 200, 0.3)), url("parchment-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: "STIX Two Text", Georgia, serif;
+    font-size: 18px; line-height: 1.55;
+  }
+  a { color: var(--kandinsky-blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--vermilion); }
+  a:focus-visible { outline: 2px solid var(--vermilion); outline-offset: 2px; }
+  .page { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+  nav {
+    display: flex; align-items: baseline; gap: 22px;
+    padding: 18px 0 10px; border-bottom: 1.5px solid var(--ink);
+    font-family: "IBM Plex Mono", monospace; font-size: 13.5px;
+  }
+  nav .brand { margin-right: auto; font-weight: 500; color: var(--ink); text-decoration: none; }
+  nav a { color: var(--ink-soft); text-decoration: none; }
+  nav a:hover { color: var(--vermilion); }
+
+  h1 { font-size: 38px; font-weight: 600; margin: 44px 0 20px; letter-spacing: -0.01em; }
+  h2 {
+    font-size: 15px;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 6px; margin: 44px 0 18px;
+  }
+  dl { margin: 0; }
+  .row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  dt {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px; color: var(--ink-soft);
+    padding-top: 3px;
+  }
+  dd { margin: 0; }
+  @media (max-width: 560px) {
+    .row { grid-template-columns: 1fr; gap: 2px; margin-bottom: 16px; }
+    h1 { font-size: 30px; }
+    nav { flex-wrap: wrap; gap: 12px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav>
+    <a class="brand" href="index.html">d. vaintrob</a>
+    <a href="index.html#research">research</a>
+    <a href="meanfield.html">mean field theory</a>
+    <a href="index.html#writing">writing</a>
+    <a href="index.html#math">mathematics</a>
+    <a href="about.html">about</a>
+  </nav>
+
+  <h1>About</h1>
+
+  <p>
+    An informal CV. Publications and writeups are on the <a href="index.html">main page</a>.
+  </p>
+
+  <h2>Positions</h2>
+  <dl>
+    <div class="row"><dt>2025–</dt><dd>Researcher, <a href="https://princint.ai">Principles of Intelligence</a> (PIBBSS)</dd></div>
+    <div class="row"><dt>2024–2025</dt><dd>Researcher, <a href="https://www.alignment.org/">ARC</a> (Alignment Research Center, theory)</dd></div>
+    <div class="row"><dt>2024</dt><dd><a href="https://www.matsprogram.org/">MATS</a> scholar</dd></div>
+    <div class="row"><dt>2022–2023</dt><dd>Postdoc, IHES</dd></div>
+    <div class="row"><dt>2021</dt><dd>Visitor, Hebrew University of Jerusalem</dd></div>
+    <div class="row"><dt>2018–2021</dt><dd>Morrey Visiting Assistant Professor, UC Berkeley</dd></div>
+    <div class="row"><dt>2016–2018</dt><dd>Postdoc, Institute for Advanced Study</dd></div>
+  </dl>
+
+  <h2>Education</h2>
+  <dl>
+    <div class="row"><dt>2011–2016</dt><dd>Ph.D. in Mathematics, MIT — advisor <a href="https://math.mit.edu/~bezrukav/">Roman Bezrukavnikov</a> (NSF fellowship)</dd></div>
+    <div class="row"><dt>2007–2011</dt><dd>A.B. in Mathematics with honors, Harvard</dd></div>
+  </dl>
+
+  <h2>Interests</h2>
+  <p>
+    Currently: mathematical foundations of deep learning and AI safety — singular learning theory, statistical field theory of neural networks, computation in superposition, Bayesian learning.
+  </p>
+  <p>
+    Previously: algebraic geometry, geometric representation theory, algebraic topology, mathematical physics.
+  </p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:dmitry@princint.ai">dmitry@princint.ai</a></p>
+
+</div>
+</body>
+</html>
