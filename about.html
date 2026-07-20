@@ -19,7 +19,7 @@
   body {
     margin: 0;
     background-color: #ece2c8;
-    background-image: linear-gradient(rgba(236, 226, 200, 0.3), rgba(236, 226, 200, 0.3)), url("parchment-bg.jpg");
+    background-image: linear-gradient(rgba(236, 226, 200, 0.65), rgba(236, 226, 200, 0.65)), url("parchment-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -63,6 +63,7 @@
   }
   dd { margin: 0; }
   @media (max-width: 560px) {
+    body { background-image: none; }
     .row { grid-template-columns: 1fr; gap: 2px; margin-bottom: 16px; }
     h1 { font-size: 30px; }
     nav { flex-wrap: wrap; gap: 12px 18px; }
